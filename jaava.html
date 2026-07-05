@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>jQuery Activity</title>
+ <!-- jQuery CDN -->
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <style>
+ .highlight {
+ background-color: yellow;
+ font-weight: bold;
+ }
+ li {
+ cursor: pointer;
+ margin: 5px;
+ }
+ </style>
+</head>
+<body>
+<h2>Student List</h2>
+<ul id="list">
+ <li>Student 1</li>
+ <li>Student 2</li>
+ <li>Student 3</li>
+ <li>Student 4</li>
+</ul>
+<button id="actionBtn">Perform Action</button>
+<script>
+$(document).ready(function() {
+ $("#list li").click(function() {
+ // DOM Traversing
+ $(this).addClass("highlight"); 
+ $(this).siblings().hide(); // hide other items
+ // Animation
+ $(this).animate({
+ fontSize: "24px"
+ });
+ // Effects
+ $(this).fadeOut(1000).fadeIn(1000);
+ });
+});
+</script>
+</body>
+</html>
